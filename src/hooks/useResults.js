@@ -5,7 +5,7 @@ export default () => {
     const [results, setResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     // async function is a function that returns a promise
-    const searchApi = async(searchTerm) => {
+    const searchApi = async (searchTerm) => {
         // waits for the promise to resolve or a response to come back
         // There are parameters for the .get() function passed as objects
         try {
@@ -41,5 +41,5 @@ export default () => {
         searchApi('vegan');
     }, [ ]);
     // return the things you still need in your screen component
-    return [results, searchApi, errorMessage];
+    return [ searchApi, results, errorMessage];
 };
