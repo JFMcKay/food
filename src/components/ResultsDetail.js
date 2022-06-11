@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         fontWeight: 'bold',
+        flex: 1,
+        width: 220,
     }
 });
 
