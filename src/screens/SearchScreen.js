@@ -23,27 +23,24 @@ const SearchScreen = () => {
     // And to clean it up
 
     return (
-        <View style={styles.container}>
+        // can use empty tags instead of View in react native
+        <>
             <SearchBar  term={term} 
                         onTermChange={setTerm} 
                         onTermSubmit={() => searchApi(term)}
             />
             {errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text>We have found {results.length} results</Text>
             <ScrollView>
                 <ResultsList results={filterResultsByPrice('$')} title="Cost Effective" />
                 <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier" />
                 <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender" />
                 <ResultsList results={filterResultsByPrice('$$$$')} title="Biggus Spenderus" />
             </ScrollView>
-        </View>
+        </>
     )
 } 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
 });
 
 export default SearchScreen;
